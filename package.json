@@ -1,0 +1,30 @@
+{
+  "name": "test-selectors-codemod",
+  "version": "1.0.0",
+  "description": "A codemode for fixing the ember-test-selectors testSelector helper deprecation",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lorcan/test-selectors-codemod.git"
+  },
+  "keywords": [
+    "ember-test-selectors",
+    "codemod",
+    "emberjs"
+  ],
+  "author": "Lorcan Coyle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lorcan/test-selectors-codemod/issues"
+  },
+  "homepage": "https://github.com/lorcan/test-selectors-codemod#readme",
+  "dependencies": {
+    "jscodeshift": "0.3.32"
+  },
+  "devDependencies": {
+    "jest": "20.0.4"
+  }
+}
