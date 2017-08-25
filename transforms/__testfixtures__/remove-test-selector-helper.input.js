@@ -8,3 +8,11 @@ let moreSelectors = {
   withValue: testSelector('key-name', 'value'),
   withLongValue: testSelector('key-name', 'value-is-longer-here'),
 };
+
+let k = 'key';
+let v = 'value';
+
+testSelector(k);
+testSelector(k, 'value');
+testSelector('key', v);
+testSelector(k, v);
