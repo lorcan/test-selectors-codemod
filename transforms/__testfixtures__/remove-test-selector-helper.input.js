@@ -16,3 +16,8 @@ testSelector(k);
 testSelector(k, 'value');
 testSelector('key', v);
 testSelector(k, v);
+
+let array = ['a', 'b', 'c'];
+array.forEach((item) => {
+  testSelector('key', item.get('id'));
+});
