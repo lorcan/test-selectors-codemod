@@ -14,3 +14,8 @@ let v = 'value';
 `[data-test-${k}="value"]`;
 `[data-test-key="${v}"]`;
 `[data-test-${k}="${v}"]`;
+
+let array = ['a', 'b', 'c'];
+array.forEach((item) => {
+  `[data-test-key="${item.get('id')}"]`;
+});

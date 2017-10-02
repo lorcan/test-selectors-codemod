@@ -24,7 +24,7 @@ module.exports = (file, api, options) => {
           let value = node.arguments[1];
           if (key.type === 'Literal' && value.type === 'Literal') {
             return j.literal(`[data-test-${key.value}="${value.value}"]`);
-          } else if (key.type === 'Literal' && value.type === 'Identifier') {
+          } else if (key.type === 'Literal' && (value.type === 'Identifier' || value.type === 'CallExpression')) {
             let first = `[data-test-${key.value}="`;
             let second = '"]';
             let quasis = [j.templateElement({cooked: first, raw: first}, false), j.templateElement({cooked: second, raw: second}, true)];
