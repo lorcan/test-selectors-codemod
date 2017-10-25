@@ -21,3 +21,11 @@ let array = ['a', 'b', 'c'];
 array.forEach((item) => {
   testSelector('key', item.get('id'));
 });
+
+let selectors = {
+  a: 'a',
+};
+
+testSelector(selectors.a);
+
+testSelector('key', -1);
