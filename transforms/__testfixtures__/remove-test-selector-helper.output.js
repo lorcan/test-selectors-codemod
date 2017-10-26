@@ -19,3 +19,11 @@ let array = ['a', 'b', 'c'];
 array.forEach((item) => {
   `[data-test-key="${item.get('id')}"]`;
 });
+
+let selectors = {
+  a: 'a',
+};
+
+`[data-test-${selectors.a}]`;
+
+'[data-test-key="-1"]';
