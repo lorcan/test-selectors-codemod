@@ -26,6 +26,21 @@ let selectors = {
   a: 'a',
 };
 
+// MemberExpressions for key and value
 testSelector(selectors.a);
+testSelector('key', selectors.a);
+testSelector(selectors.a, 'value');
+testSelector(selectors.a, selectors.a);
+testSelector(this.a);
+testSelector('key', this.a);
+testSelector(this.a, 'value');
+testSelector(this.a, this.a);
 
+// NewExpression
+testSelector(new A());
+testSelector(new A(), 'value');
+testSelector('key', new A());
+testSelector(new A(), new A());
+
+// value: UnaryExpression
 testSelector('key', -1);
