@@ -14,8 +14,7 @@ module.exports = (file, api, options) => {
         if (node.arguments.length === 1) {
           if (key.type === 'Literal') {
             return j.literal(`[data-test-${key.value}]`);
-          } else if (key.type === 'Identifier' ||
-            key.type === 'MemberExpression') {
+          } else {
             let first = '[data-test-';
             let second = ']';
             let quasis = [j.templateElement({cooked: first, raw: first}, false), j.templateElement({cooked: second, raw: second}, true)];
@@ -28,19 +27,19 @@ module.exports = (file, api, options) => {
           } else if (key.type === 'Literal' && value.type === 'UnaryExpression' &&
             value.argument.type === 'Literal') {
             return j.literal(`[data-test-${key.value}="${value.operator}${value.argument.value}"]`);
-          } else if (key.type === 'Literal' && (value.type === 'Identifier' || value.type === 'CallExpression')) {
+          } else if (key.type === 'Literal' && value.type !== 'Literal') {
             let first = `[data-test-${key.value}="`;
             let second = '"]';
             let quasis = [j.templateElement({cooked: first, raw: first}, false), j.templateElement({cooked: second, raw: second}, true)];
             return j.templateLiteral(quasis, [value]);
-          } else if (key.type === 'Identifier' && value.type === 'Literal') {
+          } else if (key.type !== 'Literal' && value.type === 'Literal') {
             let first = '[data-test-';
             let second = `="${value.value}"]`;
             let quasis = [
               j.templateElement({cooked: first, raw: first}, false),
               j.templateElement({cooked: second, raw: second}, true)];
             return j.templateLiteral(quasis, [key]);
-          } else if (key.type === 'Identifier' && value.type === 'Identifier') {
+          } else if (key.type !== 'Literal' && value.type !== 'Literal') {
             let first = '[data-test-';
             let second = '="';
             let third = '"]';

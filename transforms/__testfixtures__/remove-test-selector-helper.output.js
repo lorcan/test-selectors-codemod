@@ -24,6 +24,21 @@ let selectors = {
   a: 'a',
 };
 
+// MemberExpressions for key and value
 `[data-test-${selectors.a}]`;
+`[data-test-key="${selectors.a}"]`;
+`[data-test-${selectors.a}="value"]`;
+`[data-test-${selectors.a}="${selectors.a}"]`;
+`[data-test-${this.a}]`;
+`[data-test-key="${this.a}"]`;
+`[data-test-${this.a}="value"]`;
+`[data-test-${this.a}="${this.a}"]`;
 
+// NewExpression
+`[data-test-${new A()}]`;
+`[data-test-${new A()}="value"]`;
+`[data-test-key="${new A()}"]`;
+`[data-test-${new A()}="${new A()}"]`;
+
+// value: UnaryExpression
 '[data-test-key="-1"]';
