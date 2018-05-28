@@ -58,7 +58,7 @@ module.exports = (file, api, options) => {
   function isTestSelectorRequire(node) {
     return (
       node.type === 'ImportDeclaration' &&
-      node.source.value === 'ember-test-selectors'
+      node.source.value.endsWith('ember-test-selectors')
     );
   }
 
