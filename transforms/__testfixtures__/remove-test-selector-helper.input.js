@@ -1,4 +1,5 @@
 import testSelector from 'ember-test-selectors';
+import testSelector from 'app/tests/helpers/ember-test-selectors';
 
 let selector = testSelector('some-name');
 
